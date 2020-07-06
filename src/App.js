@@ -1,24 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+// Styles
+import './App.scss'
+
+// Components
+import Card from './Card'
 
 const App = () => {
-    const [count, setCount] = useState(0);
-    const [user, setUser] = useState('');
-
-    const handleIncrement = () => {
-        setCount(count + 1)
-    }
-
-    const handleOnChange =(e) => {
-        setUser(e.target.value)
-    }
 
     return (
-        <>
-            <div>Count {count}</div>
-            <button onClick={handleIncrement}>Increment</button>
-            <hr/>
-            <input name="user" onChange={handleOnChange} value={user} />
-        </>
+        <div className="app-main">
+            <Card name="John Doe" age={30} gender="Male" title="Dev" />
+            <Card name="MAtt Bonner" age={31} gender="Male" title="Gunner" />
+        </div>
     )
 }
 
